@@ -30,6 +30,7 @@ jobs:
           echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
           sudo apt-get update -y
           sudo apt-get install -y trivy
+
       - name: Run Trivy Scan
         run: trivy fs --format table -o fs-report.json .
 
