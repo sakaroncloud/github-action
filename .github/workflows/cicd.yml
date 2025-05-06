@@ -69,6 +69,11 @@ jobs:
       - name: Build Project
         run: mvn package
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22"
+
       - uses: actions/checkout@v4
         with:
           # Disabling shallow clones is recommended for improving the relevancy of reporting
